@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Frases Motivacionais 🦋</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            font-family: Arial, sans-serif;
+
+            background: linear-gradient(
+                135deg,
+                #ffd6ec,
+                #e5d0ff,
+                #ccecff
+            );
+
+            overflow: hidden;
+        }
+
+        .borboleta {
+            position: fixed;
+            font-size: 50px;
+
+            animation: voar 6s infinite ease-in-out;
+        }
+
+        .b1 {
+            top: 10%;
+            left: 8%;
+        }
+
+        .b2 {
+            top: 70%;
+            left: 10%;
+            animation-delay: 2s;
+        }
+
+        .b3 {
+            top: 15%;
+            right: 10%;
+            animation-delay: 1s;
+        }
+
+        .b4 {
+            bottom: 10%;
+            right: 8%;
+            animation-delay: 3s;
+        }
+
+        @keyframes voar {
+
+            0%, 100% {
+                transform: translate(0, 0) rotate(-10deg);
+            }
+
+            50% {
+                transform: translate(30px, -30px) rotate(10deg);
+            }
+
+        }
+
+        .container {
+
+            width: 90%;
+            max-width: 750px;
+
+            padding: 45px 30px;
+
+            text-align: center;
+
+            background: rgba(255,255,255,0.85);
+
+            border-radius: 40px;
+
+            border: 3px solid white;
+
+            box-shadow:
+                0 20px 50px rgba(150,80,150,0.25);
+
+        }
+
+        h1 {
+
+            color: #c45da8;
+
+            font-family: Georgia, serif;
+
+            font-size: 45px;
+
+            margin-bottom: 10px;
+
+        }
+
+        .subtitulo {
+
+            color: #85617f;
+
+            font-size: 18px;
+
+            margin-bottom: 30px;
+
+        }
+
+        .frase {
+
+            min-height: 220px;
+
+            padding: 35px;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            background: linear-gradient(
+                135deg,
+                #fff5fb,
+                #f5edff
+            );
+
+            border-radius: 30px;
+
+            border: 2px solid #efc4df;
+
+            box-shadow:
+                0 10px 30px rgba(180,100,170,0.15);
+
+        }
+
+        #textoFrase {
+
+            font-family: Georgia, serif;
+
+            font-size: 28px;
+
+            line-height: 1.5;
+
+            color: #604b64;
+
+            transition: opacity .4s;
+
+        }
+
+        .status {
+
+            margin-top: 25px;
+
+            color: #a05b93;
+
+            font-size: 16px;
+
+        }
+
+        .botao {
+
+            margin-top: 15px;
+
+            padding: 15px 28px;
+
+            border: none;
+
+            border-radius: 50px;
+
+            background: linear-gradient(
+                135deg,
+                #ff8fc7,
+                #c77dff
+            );
+
+            color: white;
+
+            font-size: 17px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+        }
+
+        .botao:hover {
+            transform: scale(1.05);
+        }
+
+        footer {
+
+            margin-top: 25px;
+
+            color: #9b7295;
+
+        }
+
+        @media (max-width: 600px) {
+
+            h1 {
+                font-size: 34px;
+            }
+
+            #textoFrase {
+                font-size: 22px;
+            }
+
+            .frase {
+                min-height: 250px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- BORBOLETINHAS -->
+
+    <div class="borboleta b1">🦋</div>
+    <div class="borboleta b2">🦋</div>
+    <div class="borboleta b3">🦋</div>
+    <div class="borboleta b4">🦋</div>
+
+
+    <main class="container">
+
+        <div>🌷 🦋 🎀 🦋 🌷</div>
+
+        <h1>
+            Frases Motivacionais
+        </h1>
+
+        <p class="subtitulo">
+            💕 Uma mensagem especial para você 💕
+        </p>
+
+
+        <div
+            class="frase"
+            aria-live="assertive"
+            aria-label="Frase motivacional">
+
+            <p id="textoFrase">
+                Preparando uma mensagem para você...
+            </p>
+
+        </div>
+
+
+        <p
+            class="status"
+            id="status">
+            🔊 Preparando a próxima mensagem...
+        </p>
+
+
+        <!--
+            Esse botão serve somente caso o navegador
+            bloqueie a fala automática.
+        -->
+
+        <button
+            class="botao"
+            onclick="iniciarVoz()">
+
+            🦋 Ouvir as frases
+
+        </button>
+
+
+        <footer>
+            Feito com carinho 💗🦋✨
+        </footer>
+
+    </main>
+
+
+    <script>
+
+        /*
+        =====================================
+        FRASES MOTIVACIONAIS
+        =====================================
+        */
+
+        const frases = [
+
+            "Você é capaz de realizar coisas incríveis. Acredite em você.",
+
+            "Nunca desista dos seus sonhos. Cada pequeno passo importa.",
+
+            "Você é muito mais forte do que imagina.",
+
+            "Não tenha medo de recomeçar. Um novo começo pode ser maravilhoso.",
+
+            "Você merece acreditar em si mesma e nos seus sonhos.",
+
+            "Mesmo nos dias difíceis, lembre-se de que você é especial.",
+
+            "Continue tentando. O seu esforço vai valer a pena.",
+
+            "Você não precisa ser perfeita. Apenas continue sendo você.",
+
+            "Grandes conquistas começam com pequenos passos.",
+
+            "Acredite que coisas lindas podem acontecer na sua vida.",
+
+            "Você já superou momentos difíceis antes e vai superar novamente.",
+
+            "Tenha paciência com você. Cada pessoa tem o seu próprio tempo.",
+
+            "Nunca compare a sua história com a história de outra pessoa.",
+
+            "Você tem uma luz dentro de você que merece brilhar.",
+
+            "Não deixe um momento difícil fazer você esquecer o seu valor.",
+
+            "Você merece felicidade, amor, paz e muitos sonhos realizados.",
+
+            "Continue caminhando. Mesmo devagar, você está avançando.",
+
+            "Você é como uma borboleta: pode se transformar e descobrir novas asas.",
+
+            "Respire fundo. Acredite. Você consegue.",
+
+            "O seu futuro pode ser muito mais bonito do que você imagina."
+
+        ];
+
+
+        let indice = 0;
+
+
+        /*
+        =====================================
+        MOSTRAR A FRASE
+        =====================================
+        */
+
+        function mostrarFrase() {
+
+            const texto =
+                document.getElementById("textoFrase");
+
+            const status =
+                document.getElementById("status");
+
+
+            texto.style.opacity = "0";
+
+
+            setTimeout(() => {
+
+                texto.textContent =
+                    frases[indice];
+
+                texto.style.opacity = "1";
+
+                status.textContent =
+                    "🔊 Falando a frase...";
+
+            }, 300);
+
+        }
+
+
+        /*
+        =====================================
+        FALAR A FRASE
+        =====================================
+        */
+
+        function falarFrase() {
+
+            speechSynthesis.cancel();
+
+
+            const fala =
+                new SpeechSynthesisUtterance(
+                    frases[indice]
+                );
+
+
+            /*
+                Define a voz como
+                português do Brasil.
+            */
+
+            fala.lang = "pt-BR";
+
+
+            /*
+                Voz mais devagar para
+                facilitar a compreensão.
+            */
+
+            fala.rate = 0.85;
+
+
+            /*
+                Tom um pouco mais suave.
+            */
+
+            fala.pitch = 1.05;
+
+
+            /*
+                Quando terminar de falar,
+                espera 3 segundos e fala
+                a próxima frase.
+            */
+
+            fala.onend = function() {
+
+                document.getElementById("status")
+                    .textContent =
+                    "🦋 Preparando outra frase...";
+
+
+                setTimeout(() => {
+
+                    indice++;
+
+                    if (indice >= frases.length) {
+                        indice = 0;
+                    }
+
+                    mostrarFrase();
+
+                    falarFrase();
+
+                }, 3000);
+
+            };
+
+
+            speechSynthesis.speak(fala);
+
+        }
+
+
+        /*
+        =====================================
+        INICIAR
+        =====================================
+        */
+
+        function iniciarVoz() {
+
+            speechSynthesis.cancel();
+
+            mostrarFrase();
+
+            setTimeout(() => {
+
+                falarFrase();
+
+            }, 500);
+
+        }
+
+
+        /*
+        =====================================
+        COMEÇA SOZINHO AO ENTRAR
+        =====================================
+        */
+
+        window.addEventListener("load", function() {
+
+            mostrarFrase();
+
+
+            setTimeout(() => {
+
+                falarFrase();
+
+            }, 1000);
+
+        });
+
+    </script>
+
+</body>
+
+</html>
